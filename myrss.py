@@ -21,7 +21,7 @@ print type(items), len(items)
 
 @app.route('/')
 def index():
-  return render_template("index.html", name="PERICO", items=items)
+  return render_template("index.html", items=items)
 
 if __name__ == "__main__":
   app.run(host="0.0.0.0", debug=True)
