@@ -24,7 +24,10 @@
 {% for item in items %}
   <li class="{{ loop.cycle('odd', 'even') }}">
     <p><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></p>
-    <p>{{ item.text }}</a></p>
+    <p>{{ item.text[:100] }}</a></p>
+    <p>{% for entity in item.entities %}
+      <a href="{{ entity[1] }}" target="_blank">{{ entity[0] }}</a>
+    {% endfor %}</p>
   </li>
 {% endfor %}
 </ul>
